@@ -2,6 +2,9 @@
     var pageVueRenderFn = function noop (a, b, c) {};
     var pageVueStaticRenderFns = [function anonymous(
 ) {
+with(this){return _c('h1',{attrs:{"id":"tutorial-removing-fields"}},[_v("Tutorial: Removing Fields"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#tutorial-removing-fields","onclick":"event.stopPropagation()"}})])}
+},function anonymous(
+) {
 with(this){return _c('blockquote',[_c('p',[_v("Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away.")]),_v(" "),_c('p',[_v("—  Antoine de Saint-Exupery")])])}
 },function anonymous(
 ) {
@@ -90,5 +93,8 @@ with(this){return _c('pre',[_c('code',{pre:true,attrs:{"class":"hljs json"}},[_c
 },function anonymous(
 ) {
 with(this){return _c('p',[_v("You can go through each individual "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("json")]),_v(" file and manually remove the "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("address")]),_v(" field.")])}
+},function anonymous(
+) {
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(", generated on Fri, 3 Nov 2023, 15:41:35 GMT+8]")])])])}
 }];
   

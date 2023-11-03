@@ -24,6 +24,7 @@
       "src": "DevOps.md",
       "title": "DevOps guide",
       "headings": {
+        "devops-guide": "DevOps guide",
         "build-automation": "Build automation",
         "continuous-integration-ci": "Continuous integration (CI)",
         "code-coverage": "Code coverage",
@@ -82,6 +83,7 @@
       "src": "SettingUp.md",
       "title": "Setting up and getting started",
       "headings": {
+        "setting-up-and-getting-started": "Setting up and getting started",
         "setting-up-the-project-in-your-computer": "Setting up the project in your computer",
         "before-writing-code": "Before writing code"
       },
@@ -91,6 +93,7 @@
       "src": "Testing.md",
       "title": "Testing guide",
       "headings": {
+        "testing": "Testing",
         "running-tests": "Running tests",
         "types-of-tests": "Types of tests"
       },
@@ -112,7 +115,7 @@
         "2-features": "2 Features",
         "2-1-basic-applicant-management": "2.1 Basic applicant management",
         "2-2-applicant-evaluation-and-amp-comparison": "2.2 Applicant evaluation &amp; comparison",
-        "2-3-data-management-and-amp-export": "2.3 Data management &amp; export",
+        "2-3-files-and-data-management": "2.3 Files and data management",
         "3-data-management": "3 Data Management",
         "3-1-saving-the-data": "3.1 Saving the data",
         "3-2-editing-the-data-file": "3.2 Editing the data file",
@@ -204,6 +207,7 @@
       "src": "tutorials/RemovingFields.md",
       "title": "Tutorial: Removing Fields",
       "headings": {
+        "tutorial-removing-fields": "Tutorial: Removing Fields",
         "safely-deleting-address": "Safely deleting Address",
         "assisted-refactoring": "Assisted refactoring",
         "manual-refactoring": "Manual refactoring",
@@ -215,6 +219,7 @@
       "src": "tutorials/TracingCode.md",
       "title": "Tutorial: Tracing code",
       "headings": {
+        "tutorial-tracing-code": "Tutorial: Tracing code",
         "before-we-start": "Before we start",
         "setting-a-breakpoint": "Setting a breakpoint",
         "tracing-the-execution-path": "Tracing the execution path",

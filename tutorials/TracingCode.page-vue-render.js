@@ -2,6 +2,9 @@
     var pageVueRenderFn = function noop (a, b, c) {};
     var pageVueStaticRenderFns = [function anonymous(
 ) {
+with(this){return _c('h1',{attrs:{"id":"tutorial-tracing-code"}},[_v("Tutorial: Tracing code"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#tutorial-tracing-code","onclick":"event.stopPropagation()"}})])}
+},function anonymous(
+) {
 with(this){return _c('blockquote',[_c('p',[_v("Indeed, the ratio of time spent reading versus writing is well over 10 to 1. We are constantly reading old code as part of the effort to write new code. …​[Therefore,] making it easy to read makes it easier to write.")]),_v(" "),_c('p',[_v("—  Robert C. Martin Clean Code: A Handbook of Agile Software Craftsmanship")])])}
 },function anonymous(
 ) {
@@ -72,5 +75,8 @@ with(this){return _c('h2',{attrs:{"id":"conclusion"}},[_v("Conclusion"),_c('a',{
 },function anonymous(
 ) {
 with(this){return _c('ol',[_c('li',[_c('p',[_v("In this tutorial, we traced the \"happy path\" (i.e., no errors). What\ndo you think will happen if we traced the following commands\ninstead? What exceptions do you think will be thrown (if any), where\nwill the exceptions be thrown and where will they be handled?")]),_v(" "),_c('ol',[_c('li',[_c('p',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("redit 1 n/Alice Yu")])])]),_v(" "),_c('li',[_c('p',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("edit 0 n/Alice Yu")])])]),_v(" "),_c('li',[_c('p',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("edit 1 n/Alex Yeoh")])])]),_v(" "),_c('li',[_c('p',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("edit 1")])])]),_v(" "),_c('li',[_c('p',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("edit 1 n/アリス ユー")])])]),_v(" "),_c('li',[_c('p',[_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("edit 1 t/one t/two t/three t/one")])])])])]),_v(" "),_c('li',[_c('p',[_v("What components will you have to modify to perform the following\nenhancements to the application?")]),_v(" "),_c('ol',[_c('li',[_c('p',[_v("Make command words case-insensitive")])]),_v(" "),_c('li',[_c('p',[_v("Allow "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("delete")]),_v(" to remove more than one index at a time")])]),_v(" "),_c('li',[_c('p',[_v("Save the address book in the CSV format instead")])]),_v(" "),_c('li',[_c('p',[_v("Add a new command")])]),_v(" "),_c('li',[_c('p',[_v("Add a new field to "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("Person")])])]),_v(" "),_c('li',[_c('p',[_v("Add a new entity to the address book")])])])])])}
+},function anonymous(
+) {
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.1.0")]),_v(", generated on Fri, 3 Nov 2023, 15:41:35 GMT+8]")])])])}
 }];
   
