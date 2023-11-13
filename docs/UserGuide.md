@@ -8,7 +8,7 @@ show-sticky-toc: true
 
 Introducing **TAfinder - the one-stop solution for all your TA selection needs**.
 
-With TAfinder, you can easily:
+As an NUS School Of Computing professor, with TAfinder, you can easily:
 1. **Manage** troves of TA applicants.
 2. Make more **informed decisions** with the help of our **compare** and **sort** functions.
 3. **Import** data to the TAfinder application.
@@ -70,7 +70,7 @@ An example is shown below.
 
 ### Installation
 
-**Step 1.** Download the latest `tafinder.jar` from [here]().
+**Step 1.** Download the latest `tafinder.jar` from [here](https://github.com/AY2324S1-CS2103T-W10-1/tp/releases/latest).
 
 **Step 2.** Copy the file to the folder you want to use as the _home folder_ for your TAfinder.
 
@@ -118,11 +118,11 @@ Some example commands you can try:
 
 <div markdown="block" class="alert alert-secondary">
 
-**:bulb: Not sure what the commands above does?**
+**:bulb: Not sure what the commands above do?**
 
-You can find all about the usable commands [here](#2-features),<br>
-look at a summary of all the usable commands [here](#72-command-summary),<br>
-OR return to the [Table of Contents](#table-of-contents) to find your desired command.
+* Find all about the usable commands [here](#features)
+* Look at a summary of all the usable commands [here](#command-summary)
+* Return to the [Table of Contents](#toc-heading) to find your desired command
 
 </div>
 
@@ -151,22 +151,22 @@ The UI has the following areas:
 
 * Words in `UPPER_CASE` are the parameters to be supplied by the user.<br>
   e.g. in `add n/NAME`,<br>
-`NAME` is a parameter which can be used as `add n/John Doe`.
+  `NAME` is a parameter which can be used as `add n/John Doe`.
 
 
 * Items in square brackets are optional.<br>
   e.g `n/NAME [t/TAG]` ,<br>
-can be used as `n/John Doe t/friend` or as `n/John Doe`
+  can be used as `n/John Doe t/friend` or as `n/John Doe`
 
 
 * Items with `…`​ after them can be used multiple times including zero times.<br>
   e.g. `[t/TAG]…​`,<br>
-can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
+  can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
 
 
 * Parameters can be in any order.<br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`,<br>
-`p/PHONE_NUMBER n/NAME` is also acceptable.
+  `p/PHONE_NUMBER n/NAME` is also acceptable.
 
 
 * Extraneous parameters will be ignored.<br>
@@ -174,7 +174,7 @@ can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
 
 
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple
-lines as space characters surrounding line-breaks may be omitted when copied over to the application.
+  lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 
 </div>
 
@@ -219,12 +219,12 @@ Here are some examples you can try with the `add` command.
 
 **`add s/A0251647W n/amanda p/89064678 e/amanda@example.com g/4.3 pg/A`**
 - Adds an applicant with the following information:
-    - **Student number**: A0251647W
-    - **Name**: Amanda
-    - **Phone number**: 89064678
-    - **Email address**: amanda@example.com
-    - **GPA**: 4.3
-    - **Previous grade**: A
+  - **Student number**: A0251647W
+  - **Name**: Amanda
+  - **Phone number**: 89064678
+  - **Email address**: amanda@example.com
+  - **GPA**: 4.3
+  - **Previous grade**: A
 
 </div>
 
@@ -232,15 +232,15 @@ Here are some examples you can try with the `add` command.
 
 **`add s/A0269357C n/john doe p/91234567 e/johndoe@example.com g/5.0 pg/A- is/8.9 c/Hardworking t/pastTA t/deanslist`**
 - Adds an applicant with the following information:
-    - **Student number**: A0269357C
-    - **Name**: John Doe
-    - **Phone number**: 91234567
-    - **Email address**: johndoe@example.com
-    - **GPA**: 5.0
-    - **Previous grade**: A-
-    - **Interview score**: 8.9
-    - **Comment**: Hardworking
-    - **Tags**: pastTA, deanslist
+  - **Student number**: A0269357C
+  - **Name**: John Doe
+  - **Phone number**: 91234567
+  - **Email address**: johndoe@example.com
+  - **GPA**: 5.0
+  - **Previous grade**: A-
+  - **Interview score**: 8.9
+  - **Comment**: Hardworking
+  - **Tags**: pastTA, deanslist
 
 </div>
 
@@ -285,27 +285,28 @@ Repeated applicant:<br>
 
 #### Editing an applicant: `edit`
 
-Edits an existing applicant in the list of applicants.
-
-![edit function UI](images/edit_afterUI.png)
+After adding a few applicants, you realize that you have made a mistake in an applicant's information. 
+Lets find out how you can edit the applicant's information.
 
 **Format:**
 
 <div markdown="block" class="alert alert-info">
 
-**`edit INDEX [s/STUDENT NUMBER] [n/NAME] [p/PHONE] [e/EMAIL] [g/GPA] [c/comment] [t/TAG]…`**
+**`edit INDEX [s/STUDENT NUMBER] [n/NAME] [p/PHONE] [e/EMAIL] [g/GPA] [pg/PREVIOUS_GRADE] [is/INTERVIEW_SCORE] [c/COMMENT] [t/TAG]…`**
 
 - **`INDEX`**: The index of the applicant to edit. The index must be a positive integer (e.g., 1, 2, 3…).
 
 - `[optional fields]`: **At least one** of the following optional fields must be provided for editing:
-    - **`s/STUDENT NUMBER`**: Student number of the applicant.
-    - **`n/NAME`**: Name of the applicant.
-    - **`p/PHONE`**: Phone number of the applicant.
-    - **`e/EMAIL`**: Email address of the applicant.
-    - **`g/GPA`**: GPA of the applicant.
-    - **`c/comment`**: Comment of the applicant.
-    - **`t/TAG`**: Tags of the applicant. Note that editing tags will replace existing tags; it is not cumulative.
-    - To remove all existing tags, use **`t/`** without specifying any tags after it.
+  - **`s/STUDENT NUMBER`**: Student number of the applicant.
+  - **`n/NAME`**: Name of the applicant.
+  - **`p/PHONE`**: Phone number of the applicant.
+  - **`e/EMAIL`**: Email address of the applicant.
+  - **`g/GPA`**: GPA of the applicant.
+  - **`pg/PREVIOUS_GRADE`**: Previous grade of the applicant.
+  - **`c/comment`**: Comment of the applicant.
+  - **`is/INTERVIEW_SCORE`**: Interview score of the applicant.
+  - **`t/TAG`**: Tags of the applicant. Note that editing tags will replace existing tags; it is not cumulative.
+  - To remove all existing tags, use **`t/`** without specifying any tags after it.
 
 </div>
 
@@ -322,12 +323,16 @@ Edits an existing applicant in the list of applicants.
 
 <div markdown="block" class="alert alert-secondary">
 
-**`edit 2 n/Betsy Crower t/`**
+**`edit 2 n/Alex Yeoh t/`**
 - Edits the following fields of the second person in the list:
   - **Name**: **`Betsy Crower`**
   - Clears all existing tags
 
 </div>
+
+Following the example above, if you entered everything correctly, you should see the following:
+
+![edit function UI](images/edit_afterUI.png)
 
 **Expected Outputs:**
 
@@ -335,7 +340,7 @@ Edits an existing applicant in the list of applicants.
 
 Successfully editing applicant and applicant's information.<br>
 Confirmation message:<br>
-  **`"Edited applicant: Student number: <student number>; Name: <name>; Phone: <phone>; Email: <email>; GPA: <gpa>; Comment: <comment>; Tags: <tags>"`**
+**`"Edited applicant: Student number: <student number>; Name: <name>; Phone: <phone>; Email: <email>; GPA: <gpa>; Comment: <comment>; Tags: <tags>"`**
 
 </div>
 
@@ -344,9 +349,9 @@ Confirmation message:<br>
 <div markdown="block" class="alert alert-danger">
 
 Invalid command format:<br>
-  `"Invalid command format!`<br>
-  `edit: Edits the details of the applicant identified by the index number used in the displayed applicant list. Existing values will be overwritten by the input values.`<br>
-  `Parameters: INDEX (must be a positive integer) [n/NAME] [p/PHONE] [e/EMAIL] [g/GPA] [c/COMMENT] [t/TAG]..."`
+`"Invalid command format!`<br>
+`edit: Edits the details of the applicant identified by the index number used in the displayed applicant list. Existing values will be overwritten by the input values.`<br>
+`Parameters: INDEX (must be a positive integer) [n/NAME] [p/PHONE] [e/EMAIL] [g/GPA] [c/COMMENT] [t/TAG]..."`
 
 </div>
 
@@ -399,17 +404,17 @@ Confirmation message:<br>
 <div markdown="block" class="alert alert-danger">
 
 Missing index: <br>
-  **`"Invalid command format!`<br>
-  `delete: Displays the applicant identified by the index number used in the displayed applicant list.`<br>
-  `Parameters: INDEX (must be a positive integer)`<br>
-  `Example: delete 1"`**
+**`"Invalid command format!`<br>
+`delete: Displays the applicant identified by the index number used in the displayed applicant list.`<br>
+`Parameters: INDEX (must be a positive integer)`<br>
+`Example: delete 1"`**
 
 </div>
 
 <div markdown="block" class="alert alert-danger">
 
 Index out of range:<br>
-  **`"Error: Invalid index. Please enter an index within range."`**
+**`"Error: Invalid index. Please enter an index within range."`**
 
 </div>
 
@@ -458,9 +463,7 @@ Shows a list of applicants.
 
 #### Viewing the details of a single applicant: `view`
 
-Displays a single applicant.
-
-![edit function UI](images/viewUI.png)
+Displays the details of a specified applicant in the details panel.
 
 **Format:**
 
@@ -468,7 +471,7 @@ Displays a single applicant.
 
 **`view INDEX`**
 
-**`INDEX`**: The index corresponding to the applicant to be displayed. The index must be a positive integer (e.g., 1, 2, 3…).
+**`INDEX`**: The index corresponding to the applicant you want to be displayed. The index must be a positive integer (e.g., 1, 2, 3…).
 
 </div>
 
@@ -479,14 +482,19 @@ Displays a single applicant.
 **`view 3`**
 - Displays the following details about the third applicant.
   - Name
-  - Student number
+  - Tags
   - Phone number
   - Email Address
   - GPA
+  - Previous Grade
+  - Interview Score
   - Comments
-  - Tags
-
+  - Attachments
 </div>
+
+Following the example above, if you entered everything correctly, you should see the following:
+
+![view function UI](images/viewUI.png)
 
 **Expected Outputs:**
 
@@ -494,12 +502,14 @@ Displays a single applicant.
 
 Successfully displaying all details of an applicant in the following format:
 - **`Name: John Doe`**
-- **`Student number: A0358289S`**
+- **`Tags: pastTA, deansList`**
 - **`Phone Number: 91234567`**
 - **`Email Address: johndoe@example.come`**
 - **`GPA: 5.0`**
-- **`Comments: Good fit, has teaching experience`**
-- **`Tags: pastTA, deansList`**
+- **`Previous Grade: A`**
+- **`Interview Scorw (optional): 8`**
+- **`Comment (optional): Good fit, has teaching experience`**
+- **`Attachments: Resume.pdf`**
 
 Confirmation message:<br>
 **`"Displaying: APPLICANT_NAME"`**
@@ -512,9 +522,9 @@ Confirmation message:<br>
 
 Missing index: <br>
 **`"Invalid command format!`<br>
-  `view: Displays the applicant identified by the index number used in the displayed applicant list.`<br>
-  `Parameters: INDEX (must be a positive integer)`<br>
-  `Example: view 1"`**
+`view: Displays the applicant identified by the index number used in the displayed applicant list.`<br>
+`Parameters: INDEX (must be a positive integer)`<br>
+`Example: view 1"`**
 
 </div>
 
@@ -531,7 +541,7 @@ Index out of range:<br>
 
 Hides/unhides an applicant from the list of applicants.
 
-**Format:** 
+**Format:**
 
 <div markdown="block" class="alert alert-info">
 
@@ -553,7 +563,7 @@ Hides/unhides an applicant from the list of applicants.
 
 `unhide INDEX`
 - Unhides the applicant at the specified INDEX from all future lists. The index refers to the number shown in the displayed person list. </br>
-Index must be a positive integer (e.g. 1, 2, 3...).
+  Index must be a positive integer (e.g. 1, 2, 3...).
 
 </div>
 
@@ -607,9 +617,9 @@ Confirmation message:<br>
 
 Missing index:<br>
 **`"Invalid command format!`<br>
-  `hide: Hides an applicant, identified by the index number used in the last list, from all future lists of applicants.`<br>
-  `Parameter: INDEX (must be a positive integer)`<br>
-  `Example: hide 1"`**
+`hide: Hides an applicant, identified by the index number used in the last list, from all future lists of applicants.`<br>
+`Parameter: INDEX (must be a positive integer)`<br>
+`Example: hide 1"`**
 
 </div>
 
@@ -617,6 +627,59 @@ Missing index:<br>
 
 Index out of range:<br>
 **`“Error: Invalid index. Please enter an index within range.”`**
+
+</div>
+
+---
+
+#### Clearing all applicants: `clear`
+
+Clears your entire list of applicants.
+
+**Format:**
+
+<div markdown="block" class="alert alert-info">
+
+**`clear`**
+
+</div>
+
+Following the example above, if you entered everything correctly, you should see the following:
+
+
+|                     Before                      |                     After                      |
+|:-----------------------------------------------:|:----------------------------------------------:|
+| ![clear function UI](images/clear_beforeUI.png) | ![clear function UI](images/clear_afterUI.png) |
+
+**Expected Outputs:**
+
+<div markdown="block" class="alert alert-success">
+
+Successfully clearing all applicants.<br>
+**`"Applicant list has been cleared!"`**
+
+</div>
+
+
+---
+
+#### Exiting the application: `exit`
+
+Exits the application, while ensuring all your changes are saved.
+
+**Format:**
+
+<div markdown="block" class="alert alert-info">
+
+**`exit`**
+
+</div>
+
+**Expected Outputs:**
+
+<div markdown="block" class="alert alert-success">
+
+- Application closes.
 
 </div>
 
@@ -725,13 +788,9 @@ Comparing the same applicant:<br>
 
 ---
 
-#### Bookmarking/Unbookmarking applicants: `bookmark/unbookmark`
+#### Bookmarking applicants: `bookmark`/`unbookmark`
 
 Bookmarks/Unbookmarks a specific applicant.
-
-|                        Before                         |               After                |
-|:-----------------------------------------------------:|:----------------------------------:|
-| ![bookmark function UI](images/bookmark_beforeUI.png) | ![bookmark function UI](images/bookmark_afterUI.png) |
 
 **Format:**
 
@@ -739,7 +798,7 @@ Bookmarks/Unbookmarks a specific applicant.
 
 **`bookmark INDEX` / `unbookmark INDEX`**
 
-**`INDEX`**: The index corresponding to the applicant to be bookmarked/unbookmarked. The index must be a positive integer (e.g., 1, 2, 3…).
+**`INDEX`**: The index corresponding to the applicant you want to bookmark/unbookmark. The index must be a positive integer (e.g., 1, 2, 3…).
 
 </div>
 
@@ -747,17 +806,30 @@ Bookmarks/Unbookmarks a specific applicant.
 
 <div markdown="block" class="alert alert-secondary">
 
-**`bookmark 3`**
-- Bookmarks the third applicant.
+**`bookmark 2`**
+- Bookmarks the second applicant.
 
 </div>
+
+Following the example above, if you entered everything correctly, you should see the following:
+
+|                        Before                         |               After                |
+|:-----------------------------------------------------:|:----------------------------------:|
+| ![bookmark function UI](images/bookmark_beforeUI.png) | ![bookmark function UI](images/bookmark_afterUI.png) |
 
 <div markdown="block" class="alert alert-secondary">
 
-**`unbookmark 3`**
-- Unbookmarks the third applicant.
+**`unbookmark 2`**
+- Unbookmarks the second applicant.
 
 </div>
+
+Following the example above, if you entered everything correctly, you should see the following:
+
+|                          Before                           |                          After                           |
+|:---------------------------------------------------------:|:--------------------------------------------------------:|
+| ![unbookmark function UI](images/unbookmark_beforeUI.png) | ![unbookmark function UI](images/unbookmark_afterUI.png) |
+
 
 **Expected Outputs:**
 
@@ -765,7 +837,7 @@ Bookmarks/Unbookmarks a specific applicant.
 
 - Successfully bookmark/unbookmark applicant at the given index.
 - Confirmation message:<br>
-**`"Applicant at index INDEX has been successfully bookmarked/unbookmarked."`**
+  **`"Applicant at index INDEX has been successfully bookmarked/unbookmarked."`**
 
 </div>
 
@@ -775,9 +847,9 @@ Bookmarks/Unbookmarks a specific applicant.
 
 Missing index:<br>
 **`"Invalid command format!`<br>
-  `bookmark: Bookmarks an applicant, identified by the index number used in the last list, from all future lists of applicants.`<br>
-  `Parameter: INDEX (must be a positive integer)`<br>
-  `Example: bookmark 1"`**
+`bookmark: Bookmarks an applicant, identified by the index number used in the last list, from all future lists of applicants.`<br>
+`Parameter: INDEX (must be a positive integer)`<br>
+`Example: bookmark 1"`**
 
 </div>
 
@@ -790,7 +862,7 @@ Index out of range:<br>
 
 ---
 
-#### Commenting on TA applicant: **`comment`**
+#### Commenting on applicant: `comment`
 
 One of yours TAs is unable to make it for the interview.
 You want to make a comment on the applicant to remind yourself to follow up with him/her.
@@ -852,17 +924,14 @@ Index out of range:<br>
 
 </div>
 
+
 ---
 
 ### Files and data management
 
 #### Importing applicants from spreadsheet: `import`
 
-<box type="definition">
-
 Imports an entire list of applicants along with their details from a CSV file.
-
-</box>
 
 |            Sample .csv             |                After import                |
 |:----------------------------------:|:------------------------------------------:|
@@ -875,6 +944,22 @@ Imports an entire list of applicants along with their details from a CSV file.
 **`import FILENAME`**
 
 **`FILENAME`**: The desired filename of the CSV file to import from (including the file extension)
+
+</div>
+
+<div markdown="block" class="alert alert-warning">
+
+The first line of the CSV file should contain the column names e.g. `studentNo`, `name` in any order. It must contain all the column names as specified in the example below. The following rows should contain the data for each applicant in the order specified by the header row.
+
+```csv
+studentNo,name,phone,email,gpa,previousGrade,tags
+A0123486A,Jasmine David,98472983,jasmine_david@u.nus.edu,4.3,B+,deansList;pastTA
+A0456123A,Sandeep Kopparthi,86753746,sandeep@u.nus.edu,5.0,B+,pastTA
+A0775848D,Lim Boon Kong,97777777,boonkong@u.nus.edu,3.5,C,deansList
+A0483910A,Mohammed Taufiq bin Rozaini,85535252,taufiq@u.nus.edu,4.2,A+,
+```
+
+*Note: The CSV format supported is only a **subset** of the [RFC 4180 CSV standard](https://www.loc.gov/preservation/digital/formats/fdd/fdd000323.shtml). Only text, commas and newlines are respected. No quoting or escaping is recognised by the parser.*
 
 </div>
 
@@ -893,7 +978,7 @@ Imports an entire list of applicants along with their details from a CSV file.
 
 - Successfully attaching a file to the applicant at the corresponding index.
 - Sample confirmation message:<br>
-**`"Imported 10 applicants successfully!"`**
+  **`"Imported 10 applicants successfully!"`**
 
 </div>
 
@@ -948,7 +1033,7 @@ Attaches local files to the profiles of applicants to provide even more richness
 
 - Successfully attaching a file to the applicant at the corresponding index.
 - Sample confirmation message:<br>
-**`"Attached 1 attachments to Alex Yeoh!"`**
+  **`"Attached 1 attachments to Alex Yeoh!"`**
 
 </div>
 
@@ -978,13 +1063,13 @@ TAfinder data are saved in the hard disk automatically after any command that ch
 
 TAfinder data are saved automatically as a JSON file `[JAR file location]/data/tafinder.json`. Advanced users are welcome to update data directly by editing that data file.
 
-<box type="warning">
-
 **Warning:**
+
+<div markdown="block" type="alert alert-warning">
 
 If your changes to the data file makes its format invalid, TAfinder will discard all data and start with an empty data file at the next run. Hence, it is recommended to take a backup of the file before editing it.
 
-</box>
+</div>
 
 --------------------------------------------------------------------------------------------------------------------
 ## Upcoming Features [coming in a future update!]
@@ -1020,23 +1105,23 @@ If your changes to the data file makes its format invalid, TAfinder will discard
 ### Command Summary
 #### Basic applicant management commands
 
-| Action          | Format, Examples                                                                                                                                                                |
-|-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Add**         | - `add [s/STUDENT_NUMBER] [n/NAME] [p/PHONE] [e/EMAIL] [g/GPA] [t/TAG]…` <br> - e.g., `add s/A0269357C n/john doe p/91234567 e/johndoe@example.com g/5.0 t/pastTA t/deanslist` |
-| **Edit**        | - `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> - e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                 |
-| **Delete**      | - `delete INDEX`<br> - e.g., `delete 3`                                                                                                                                         |
-| **List**        | - `list`                                                                                                                                                                        |
-| **View**        | - `view INDEX`<br> - e.g., `view 3`                                                                                                                                             |
-| **Hide/Unhide** | - `hide INDEX` / `unhide INDEX`<br/> - e.g., `hide 3` / `unhide 3`                                                                                                              |
+| Action          | Format, Examples                                                                                                                                                                      |
+|-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Add**         | - `add s/STUDENT_NUMBER n/NAME p/PHONE e/EMAIL g/GPA [pg/PREVIOUS_GRADE] [is/INTERVIEW_SCORE] [c/COMMENT] [t/TAG]…` <br> - e.g., `add s/A0269357C n/john doe p/91234567 e/johndoe@example.com g/5.0 pg/A+ t/pastTA t/deanslist` |
+| **Edit**        | - `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> - e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                       |
+| **Delete**      | - `delete INDEX`<br> - e.g., `delete 3`                                                                                                                                               |
+| **List**        | - `list [FIELD]`                                                                                                                                                                              |
+| **View**        | - `view INDEX`<br> - e.g., `view 3`                                                                                                                                                   |
+| **Hide/Unhide** | - `hide INDEX` / `unhide INDEX`<br/> - e.g., `hide 3` / `unhide 3`                                                                                                                    |
 
 #### Applicant comparison and evaluation commands
 
 | Action                  | Format, Examples                                                                  |
 |-------------------------|-----------------------------------------------------------------------------------|
-| **Sort GPA**            | - `sort-gpa`                                                                      |
+| **Sort**                | - `sort FIELD`<br> - e.g., `sort gpa`, `sort name`                                |
 | **Compare**             | - `compare INDEX1 INDEX2`<br> - e.g.,`compare 1 2`                                |
 | **Bookmark/Unbookmark** | - `bookmark INDEX` / `unbookmark INDEX`<br> - e.g., `bookmark 3` / `unbookmark 3` |
-| **Comment**             | - `comment INDEX COMMENT`<br/> - e.g., `comment 3 Hardworking`                    |
+| **Comment**             | - `comment INDEX c/COMMENT`<br/> - e.g., `comment 3 c/Hardworking`                |
 
 #### Data import and management
 
