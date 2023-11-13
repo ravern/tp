@@ -6,9 +6,9 @@ show-sticky-toc: true
 
 ## Overview
 
-Introducing **TAfinder - the one-stop solution for all your TA selection needs**.
+Introducing **TAfinder - the one-stop solution for all your Teaching Assistant (TA) selection needs**.
 
-As an NUS School Of Computing professor, with TAfinder, you can easily:
+As an NUS School Of Computing (SOC) professor, with TAfinder, you can easily:
 1. **Manage** troves of TA applicants.
 2. Make more **informed decisions** with the help of our **compare** and **sort** functions.
 3. **Import** data to the TAfinder application.
@@ -69,11 +69,11 @@ An example is shown below:
 
 ### Installation
 
-**Step 1.** Download the latest `tafinder.jar` from [here](https://github.com/AY2324S1-CS2103T-W10-1/tp/releases/latest).
+**Step 1.** Download the latest `tafinder.jar` file from [here](https://github.com/AY2324S1-CS2103T-W10-1/tp/releases/latest).
 
 **Step 2.** Copy the file to the folder you want to use as the _home folder_ for your TAfinder.
 
-**Step 3.** Double-click on the `tafinder.jar` file to start the app.
+**Step 3.** Double-click on the `tafinder.jar` file to start the TAfinder app.
 
 <div markdown="block" class="alert alert-secondary">
 
@@ -81,11 +81,13 @@ An example is shown below:
 
 **Step 1.** Open a command terminal.
 
-**Step 2.** Type in `java -jar ` (Keep in mind of the space at the end).
+**Step 2.** Navigate to the location of the `tafinder.jar` file.
 
-**Step 3.** Drag and drop `tafinder.jar` into the command terminal.
+**Step 3.** Type in `java -jar ` (Keep in mind of the space at the end).
 
-**Step 4.** Press enter and execute the command.
+**Step 4.** Drag and drop `tafinder.jar` into the command terminal.
+
+**Step 5.** Press enter and execute the command.
 
 An example of the final command is displayed below:
 
@@ -104,13 +106,13 @@ The GUI similar to the below should appear in a few seconds.
 pressing Enter will open the help window.<br>
 Some example commands you can try:
 
-- `list` : Lists all contacts.
+- `list` : Lists all applicants.
 
 - `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` : Adds a contact named `John Doe` to the Address Book.
 
-- `delete 3` : Deletes the 3rd contact shown in the current list.
+- `delete 3` : Deletes the 3rd applicant shown in the current list.
 
-- `clear` : Deletes all contacts.
+- `clear` : Deletes all applicants.
 
 - `exit` : Exits the app.
 
@@ -134,7 +136,7 @@ The UI has the following areas:
 - Navigation Bar
   - This is where you can navigate to the `File` and `Help` menus.
 - Command Input Box
-  - This where commands are typed.
+  - This is where commands are typed.
   - press `Enter` to execute it.
 - Command Result Screen
   - This is where the result of the command is displayed. Applicants are displayed in a list format.
@@ -376,7 +378,7 @@ Index out of range:<br>
 
 #### Deleting an applicant: `delete`
 
-Delete a singular existing applicant in the list of applicants.=
+Delete a singular existing applicant in the list of applicants.
 
 ![delete function UI](images/delete_afterUI.png)
 
@@ -1105,15 +1107,15 @@ If your changes to the data file makes its format invalid, TAfinder will discard
 ## Summary
 ### Prefix Summary
 
-| Parameter      | Prefix | Rules                                                                                                                                                                                                              |
-|----------------|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Student number | s/     | - Should be in the format `AdddddddL`, <br/>where `d` represents digit and `L` represents capital letters.                                                                                                         |
-| Name           | n/     | - Should only contains alphanumeric characters and spaces.                                                                                                                                                         |
-| Phone          | p/     | - Should only contain digits<br/>- Should have at least 3 digits.                                                                                                                                                  |
+| Parameter      | Prefix | Rules                                                                                                                                                                                                             |
+|----------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Student number | s/     | - Should be in the format `CdddddddC`, <br/>where `d` represents digit and `C` represents capital letters.                                                                                                        |
+| Name           | n/     | - Should only contain alphanumeric characters and spaces.                                                                                                                                                         |
+| Phone          | p/     | - Should only contain digits<br/>- Should have at least 3 digits.                                                                                                                                                 |
 | Email          | e/     | - Should only be of the form `local@domain` and only accept alphanumeric characters<br/>- `local` allows for special characters `+`, `_`, `.` and `-` as well.<br/>- `domain` must be at least 2 letters long<br/> |
-| GPA            | g/     | - Should be in the range of 0.00 to 5.00 inclusive.<br/>- Can be given in 0, 1 or 2 decimal places.                                                                                                                |
-| Comment        | c/     | - Can be any character.                                                                                                                                                                                            |
-| Tag            | t/     | - Should only contain alphanumeric characters.<br/>- Should not contain spaces.                                                                                                                                    |
+| GPA            | g/     | - Should be in the range of 0.00 to 5.00 inclusive.<br/>- Can be given in 0, 1 or 2 decimal places.                                                                                                               |
+| Comment        | c/     | - Can be any character.                                                                                                                                                                                           |
+| Tag            | t/     | - Should only contain alphanumeric characters.<br/>- Should not contain spaces.                                                                                                                                   |
 
 
 ### Command Summary
