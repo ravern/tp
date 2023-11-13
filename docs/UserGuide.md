@@ -96,7 +96,8 @@ An example of the final command is displayed below.
 
 </div>
 
-The GUI similar to the below should appear in a few seconds. ![Ui](images/navigationUI.png)
+The GUI similar to the below should appear in a few seconds. 
+![Ui](images/startup-UI.png)
 
 ### Utilisation
 
@@ -120,26 +121,35 @@ Some example commands you can try:
 
 **:bulb: Not sure what the commands above do?**
 
-* Find all about the usable commands [here](#features)
-* Look at a summary of all the usable commands [here](#command-summary)
-* Return to the [Table of Contents](#toc-heading) to find your desired command
+* Find all about the usable commands [here](#features).
+* Look at a summary of all the usable commands [here](#command-summary).
+* Return to the [Table of Contents](#toc-heading) to find your desired command.
 
 </div>
 
 ### Navigating the User Interface
-
-![UI with shaded areas](images/tafinder-UI.png)
+![UI with shaded areas](images/navigationUI.png)
 
 The UI has the following areas:
-- <span style="background-color:#70AD47">Navigation bar</span>
+- Navigation Bar
   - This is where you can navigate to the `File` and `Help` menus.
-- <span style="background-color:#FFC000">Command Input Box</span>
-  - This where commands are typed
+- Command Input Box
+  - This where commands are typed.
   - press `Enter` to execute it.
-- <span style="background-color:#FF0000">Command Result Screen</span>
+- Command Result Screen
   - This is where the result of the command is displayed. Applicants are displayed in a list format.
-- <span style="background-color:#2A035D">Applicant list</span>
+- Applicant List
   - This is where the list of applicants is displayed.
+- Applicant Viewing Box
+  - This is where the details of the selected applicant is displayed after the command `view` is executed.
+
+<div markdown="block" class="alert alert-secondary">
+
+**:bulb: Not sure what `view` does?**
+
+* Find out about `view` [here](#viewing-the-details-of-a-single-applicant-view).
+
+</div>
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -156,7 +166,7 @@ The UI has the following areas:
 
 * Items in square brackets are optional.<br>
   e.g `n/NAME [t/TAG]` ,<br>
-  can be used as `n/John Doe t/friend` or as `n/John Doe`
+  can be used as `n/John Doe t/friend` or as `n/John Doe`.
 
 
 * Items with `…`​ after them can be used multiple times including zero times.<br>
