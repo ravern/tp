@@ -57,15 +57,15 @@ An example is shown below:
 
 #### Glossary
 
-| Words/Abbreviations | Explanation                                                                                                                          |
-|---------------------|--------------------------------------------------------------------------------------------------------------------------------------|
-| **TA**              | Teaching Assistant                                                                                                                   |
-| **Applicant**       | Applicant refers to a student who has applied as a TA                                                                                |
-| **Mainstream OS**   | Windows, Linux or Mac                                                                                                                |
-| **CLI**             | Command-Line Interface                                                                                                               |
-| **GUI**             | Graphical User Interface                                                                                                             |
-| **Toast**           | A popup alert to inform users about certain information.                                                                             |
-| **Tag**             | Tags are associated with applicants, users can tag applicants with any keyword they want,<br/>the number of tags are not restricted. |
+| Words/Abbreviations | Explanation                                                                                                                      |
+|---------------------|----------------------------------------------------------------------------------------------------------------------------------|
+| **TA**              | Teaching Assistant.                                                                                                              |
+| **Applicant**       | Applicant refers to a student who has applied as a TA.                                                                           |
+| **Mainstream OS**   | Windows, Linux or Mac.                                                                                                           |
+| **CLI**             | Command-Line Interface.                                                                                                          |
+| **GUI**             | Graphical User Interface.                                                                                                        |
+| **Toast**           | A popup alert to inform users about certain information.                                                                         |
+| **Tag**             | Tags are associated with applicants, users can tag applicants with any keyword they want, the number of tags are not restricted. |
 
 ### Installation
 
@@ -97,7 +97,7 @@ An example of the final command is displayed below:
 
 </div>
 
-The GUI similar to the below should appear in a few seconds. 
+The GUI similar to the below should appear in a few seconds: 
 ![Ui](images/startupUI.png)
 
 ### Utilisation
@@ -108,7 +108,7 @@ Some example commands you can try:
 
 - `list` : Lists all applicants.
 
-- `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` : Adds a contact named `John Doe` to the Address Book.
+- `add s/A0251647W n/Harry Lee p/89064678 e/harry@example.com g/4.3 pg/A` : Adds an applicant named "Harry Lee" to the list.
 
 - `delete 3` : Deletes the 3rd applicant shown in the current list.
 
@@ -133,23 +133,23 @@ Some example commands you can try:
 ![UI with shaded areas](images/navigationUI.png)
 
 The UI has the following areas:
-- Navigation Bar
+- **Navigation Bar**
   - This is where you can navigate to the `File` and `Help` menus.
-- Command Input Box
+- **Command Input Box**
   - This is where commands are typed.
-  - press `Enter` to execute it.
-- Command Result Screen
-  - This is where the result of the command is displayed. Applicants are displayed in a list format.
-- Applicant List
+  - Press `Enter` to execute it.
+- **Command Result Screen**
+  - This is where the result of entering a command is displayed.
+- **Applicant List**
   - This is where the list of applicants is displayed.
-- Applicant Viewing Box
+- **Applicant Viewing Box**
   - This is where the details of the selected applicant is displayed after the command `view` is executed.
 
 <div markdown="block" class="alert alert-secondary">
 
 **:bulb: Not sure what `view` does?**
 
-* Find out about `view` [here](#viewing-the-details-of-a-single-applicant-view).
+* Find out more about `view` [here](#viewing-the-details-of-a-single-applicant-view).
 
 </div>
 
@@ -162,22 +162,22 @@ The UI has the following areas:
 **:information_source: Notes about the command format:**<br>
 
 * Words in `UPPER_CASE` are the parameters to be supplied by the user.<br>
-  e.g. in `add n/NAME`,<br>
+  **e.g.** `add n/NAME`,<br>
   `NAME` is a parameter which can be used as `add n/John Doe`.
 
 
 * Items in square brackets are optional.<br>
-  e.g `n/NAME [t/TAG]` ,<br>
+  **e.g.** `n/NAME [t/TAG]` ,<br>
   can be used as `n/John Doe t/friend` or as `n/John Doe`.
 
 
-* Items with `…`​ after them can be used multiple times including zero times.<br>
-  e.g. `[t/TAG]…​`,<br>
+* Items with `…`​ after them can be used zero or more times.<br>
+  **e.g.** `[t/TAG]…​`,<br>
   can be used as ` ` (i.e. 0 times), `t/friend`, `t/friend t/family` etc.
 
 
 * Parameters can be in any order.<br>
-  e.g. if the command specifies `n/NAME p/PHONE_NUMBER`,<br>
+  **e.g.** if the command specifies `n/NAME p/PHONE_NUMBER`,<br>
   `p/PHONE_NUMBER n/NAME` is also acceptable.
 
 
@@ -196,8 +196,6 @@ The UI has the following areas:
 
 #### Adding an applicant: `add`
 
-You have just finished setting up TAfinder and you are ready to add your first applicant.
-Let's find out how you can add the applicant to the list.
 
 **Format:**
 
@@ -205,7 +203,7 @@ Let's find out how you can add the applicant to the list.
 
 **`add s/STUDENT_NUMBER n/NAME p/PHONE e/EMAIL g/GPA [pg/PREVIOUS_GRADE] [is/INTERVIEW_SCORE] [c/COMMENT] [t/TAG]…`**
 
-- **`s/STUDENT_NUMBER`**: Student number of the applicant
+- **`s/STUDENT_NUMBER`**: Student number of the applicant.
 - **`n/NAME`**: Name of the applicant.
 - **`p/PHONE`**: Phone number of the applicant.
 - **`e/EMAIL`**: Email address of the applicant.
@@ -222,8 +220,6 @@ Let's find out how you can add the applicant to the list.
 :bulb: You can add more than 1 tag to an applicant by adding more `t/TAG` parameters.
 
 </div>
-
-Here are some examples you can try with the `add` command.
 
 **Examples:**
 
@@ -260,17 +256,16 @@ Following the example above, if you entered everything correctly, you should see
 
 ![add.jpg](images/add_afterUI.png)
 
-You have now successfully added your first applicant to the list. As you add more applicants to the list,
-watch out for the expected and erroneous messages below that could be displayed in the command result screen!
 
 **Expected Outputs:**
 
 <div markdown="block" class="alert alert-success">
 
-Successfully added applicant and the applicant's information:<br>
-**`"New applicant added: Student number: <student number>; Name: <name>; Phone: <phone>;
+- Successfully added an applicant.
+- Confirmation message:<br>
+**`New applicant added: Student number: <student number>; Name: <name>; Phone: <phone>;
 Email: <email>; GPA: <gpa>; Previous grade: <previous grade>; [Interview score: <interview score>];
-[Comment: <comment>]; [Tags: <tags>]."`**
+[Comment: <comment>]; [Tags: <tags>].`**
 
 </div>
 
@@ -279,26 +274,23 @@ Email: <email>; GPA: <gpa>; Previous grade: <previous grade>; [Interview score: 
 <div markdown="block" class="alert alert-danger">
 
 Invalid command format:<br>
-**`"Invalid command format!"`<br>
-`"add: Adds an applicant to the list. Parameters: s/STUDENT NUMBER n/NAME p/PHONE e/EMAIL g/GPA pg/PREV GRADE
-[is/INTERVIEW SCORE] [c/COMMENT] [t/TAG]..."`<br>
-`"Example: add s/A0343434C n/John Doe p/98765432 e/johnd@example.com g/4.9 pg/A is/9.1 c/Hardworking and diligent t/pastTA "`**
+**`Invalid command format!`<br>
+`add: Adds an applicant to the list. Parameters: s/STUDENT NUMBER n/NAME p/PHONE e/EMAIL g/GPA pg/PREV GRADE
+[is/INTERVIEW SCORE] [c/COMMENT] [t/TAG]...`<br>
+`Example: add s/A0343434C n/John Doe p/98765432 e/johnd@example.com g/4.9 pg/A is/9.1 c/Hardworking and diligent t/pastTA`**
 
 </div>
 
 <div markdown="block" class="alert alert-danger">
 
 Repeated applicant:<br>
-**`"This applicant already exists in the applicant list."`**
+**`This applicant already exists in the applicant list.`**
 
 </div>
 
 ---
 
 #### Editing an applicant: `edit`
-
-After adding a few applicants, you realize that you have made a mistake in an applicant's information. 
-Lets find out how you can edit the applicant's information.
 
 **Format:**
 
@@ -350,9 +342,9 @@ Following the example above, if you entered everything correctly, you should see
 
 <div markdown="block" class="alert alert-success">
 
-Successfully editing applicant and applicant's information.<br>
-Confirmation message:<br>
-**`"Edited applicant: Student number: <student number>; Name: <name>; Phone: <phone>; Email: <email>; GPA: <gpa>; Comment: <comment>; Tags: <tags>"`**
+- Successfully edited an applicant.
+- Confirmation message:<br>
+**`Edited applicant: Student number: <student number>; Name: <name>; Phone: <phone>; Email: <email>; GPA: <gpa>; Comment: <comment>; Tags: <tags>`**
 
 </div>
 
@@ -361,16 +353,17 @@ Confirmation message:<br>
 <div markdown="block" class="alert alert-danger">
 
 Invalid command format:<br>
-`"Invalid command format!`<br>
+`Invalid command format!`<br>
 `edit: Edits the details of the applicant identified by the index number used in the displayed applicant list. Existing values will be overwritten by the input values.`<br>
-`Parameters: INDEX (must be a positive integer) [n/NAME] [p/PHONE] [e/EMAIL] [g/GPA] [c/COMMENT] [t/TAG]..."`
+`Parameters: INDEX (must be a positive integer) [n/NAME] [p/PHONE] [e/EMAIL] [g/GPA] [c/COMMENT] [t/TAG]...`<br>
+`Example: edit 1 p/91234567 e/johndoe@example.com`
 
 </div>
 
 <div markdown="block" class="alert alert-danger">
 
 Index out of range:<br>
-**`"Error: Invalid index. Please enter an index within range."`**
+**`Error: Invalid index. Please enter an index within range.`**
 
 </div>
 
@@ -378,7 +371,6 @@ Index out of range:<br>
 
 #### Deleting an applicant: `delete`
 
-Delete a singular existing applicant in the list of applicants.
 
 ![delete function UI](images/delete_afterUI.png)
 
@@ -405,9 +397,9 @@ Delete a singular existing applicant in the list of applicants.
 
 <div markdown="block" class="alert alert-success">
 
-Successfully delete applicant and applicant's information at the given index.<br>
-Confirmation message:<br>
-**`"Deleted applicant: Student number: <student number>; Name: <name>; Phone: <phone>; Email: <email>; GPA: <gpa>; Comment: <comment> ; Tags: <tags>"`**
+- Successfully deleted an applicant.
+- Confirmation message:<br>
+**`Deleted applicant: Student number: <student number>; Name: <name>; Phone: <phone>; Email: <email>; GPA: <gpa>; Comment: <comment> ; Tags: <tags>.`**
 
 </div>
 
@@ -416,17 +408,17 @@ Confirmation message:<br>
 <div markdown="block" class="alert alert-danger">
 
 Missing index: <br>
-**`"Invalid command format!`<br>
+**`Invalid command format!`<br>
 `delete: Displays the applicant identified by the index number used in the displayed applicant list.`<br>
 `Parameters: INDEX (must be a positive integer)`<br>
-`Example: delete 1"`**
+`Example: delete 1`**
 
 </div>
 
 <div markdown="block" class="alert alert-danger">
 
 Index out of range:<br>
-**`"Error: Invalid index. Please enter an index within range."`**
+**`Error: Invalid index. Please enter an index within range.`**
 
 </div>
 
@@ -434,7 +426,6 @@ Index out of range:<br>
 
 #### Listing all applicant: `list`
 
-Shows a list of applicants.
 
 **Format:**
 
@@ -512,7 +503,7 @@ Following the example above, if you entered everything correctly, you should see
 
 <div markdown="block" class="alert alert-success">
 
-Successfully displaying all details of an applicant in the following format:
+Sample display of the details of an applicant:
 - **`Name: John Doe`**
 - **`Tags: pastTA, deansList`**
 - **`Phone Number: 91234567`**
@@ -524,7 +515,7 @@ Successfully displaying all details of an applicant in the following format:
 - **`Attachments: Resume.pdf`**
 
 Confirmation message:<br>
-**`"Displaying: APPLICANT_NAME"`**
+**`Displaying: APPLICANT_NAME.`**
 
 </div>
 
@@ -533,10 +524,10 @@ Confirmation message:<br>
 <div markdown="block" class="alert alert-danger">
 
 Missing index: <br>
-**`"Invalid command format!`<br>
+**`Invalid command format!`<br>
 `view: Displays the applicant identified by the index number used in the displayed applicant list.`<br>
 `Parameters: INDEX (must be a positive integer)`<br>
-`Example: view 1"`**
+`Example: view 1`**
 
 </div>
 
@@ -601,7 +592,7 @@ Hides/unhides an applicant from the list of applicants.
 
 <div markdown="block" class="alert alert-secondary">
 
-**`list hidden` then `unhide 2`**
+**`list hidden` followed by `unhide 2`**
 - Lists all hidden applicants, then unhides the applicant at index 2 in the list of hidden applicants.
 
 </div>
@@ -617,9 +608,9 @@ Hides/unhides an applicant from the list of applicants.
 
 <div markdown="block" class="alert alert-success">
 
-Successfully hiding/unhiding applicant(s).<br>
-Confirmation message:<br>
-**`APPLICANT_NAME hidden successfully.`**
+- Successfully hidden an applicant.
+- Confirmation message:<br>
+**`Applicant <name>; Phone: <phone>; Email: <email>; GPA: <gpa>; Comment: <comment>; Tags: <tags> hidden from lists.`**
 
 </div>
 
@@ -628,17 +619,17 @@ Confirmation message:<br>
 <div markdown="block" class="alert alert-danger">
 
 Missing index:<br>
-**`"Invalid command format!`<br>
+**`Invalid command format!`<br>
 `hide: Hides an applicant, identified by the index number used in the last list, from all future lists of applicants.`<br>
 `Parameter: INDEX (must be a positive integer)`<br>
-`Example: hide 1"`**
+`Example: hide 1`**
 
 </div>
 
 <div markdown="block" class="alert alert-danger">
 
 Index out of range:<br>
-**`“Error: Invalid index. Please enter an index within range.”`**
+**`Error: Invalid index. Please enter an index within range.`**
 
 </div>
 
@@ -667,8 +658,9 @@ Following the example above, if you entered everything correctly, you should see
 
 <div markdown="block" class="alert alert-success">
 
-Successfully clearing all applicants.<br>
-**`"Applicant list has been cleared!"`**
+- Successfully cleared all applicants.
+- Confirmation message:<br>
+**`Applicant list has been cleared!`**
 
 </div>
 
@@ -701,7 +693,7 @@ Exits the application, while ensuring all your changes are saved.
 
 #### Sorting applicants by GPA: `sort`
 
-Sorts applicants by a field
+Sorts applicants by a designated field.
 
 |              Before                |               After                |
 |:----------------------------------:|:----------------------------------:|
@@ -713,7 +705,7 @@ Sorts applicants by a field
 
 **`sort FIELD`**
 
-**`FIELD`**: The name of the field that applicants are sorted by. <br>
+**`FIELD`**: The field that applicants are sorted by. <br>
 * Valid fields: `name`, `studentNo`, `gpa`, `previousGrade`, `interviewScore`, `comment`, `phone`, `email`, `tags` <br>
 
 </div>
@@ -731,7 +723,7 @@ Sorts applicants by a field
 <div markdown="block" class="alert alert-danger">
 
 Empty list:<br>
-**`"No applicants to sort."`**
+**`No applicants to sort.`**
 
 </div>
 
@@ -756,6 +748,7 @@ Compares two applicants side by side to make informed decisions.
 **`INDEX1`**: The index of the first applicant to compare.
 
 **`INDEX2`**: The index of the second applicant to compare.<br>
+
 Both indices must be a positive integer (e.g., 1, 2, 3…), and should not be the same.
 
 </div>
@@ -773,16 +766,19 @@ Both indices must be a positive integer (e.g., 1, 2, 3…), and should not be th
 
 <div markdown="block" class="alert alert-success">
 
+- Successfully compare two applicants.
+- Confirmation message:<br>
+  **`Comparison successful!`**
 - A side-by-side comparison of the two applicants is displayed in a user-friendly format.
 - This comparison window will include:
   - Student number
   - Name
   - Various TA selection criteria such as:
     - GPA
-    - CCA count
-    - Interview Performance Rating (IPR)
-    - tags
-- The system highlights the differences between the two applicants, making it easy to see variations in their profiles.
+    - Interview Score
+    - Module Grade
+    - Comments
+- The system also highlights the differences between the two applicants, making it easy to see variations in their profiles.
 
 </div>
 
@@ -791,14 +787,23 @@ Both indices must be a positive integer (e.g., 1, 2, 3…), and should not be th
 <div markdown="block" class="alert alert-danger">
 
 Applicant not found:<br>
-**`"Error: One or both of the specified applicants were not found in the list."`**
+**`Error: One or both of the specified applicants were not found in the list.`**
 
 </div>
 
 <div markdown="block" class="alert alert-danger">
 
 Comparing the same applicant:<br>
-**`"Error: Please provide distinct indices. You cannot compare the same applicant."`**
+**`Error: Please provide distinct indices. You cannot compare the same applicant.`**
+
+</div>
+
+<div markdown="block" class="alert alert-danger">
+
+Comparing more than 2 applicants:<br>
+**`Invalid command format!`<br>
+`Please follow the format: compare INDEX1 INDEX2.`<br>
+`Parameters: INDEX (must be positive integers)`**
 
 </div>
 
@@ -851,9 +856,9 @@ Following the example above, if you entered everything correctly, you should see
 
 <div markdown="block" class="alert alert-success">
 
-- Successfully bookmark/unbookmark applicant at the given index.
+- Successfully bookmarked/unbookmarked applicant at the given index.
 - Confirmation message:<br>
-  **`"Applicant at index INDEX has been successfully bookmarked/unbookmarked."`**
+  **`Applicant at index INDEX has been successfully bookmarked/unbookmarked.`**
 
 </div>
 
@@ -862,17 +867,17 @@ Following the example above, if you entered everything correctly, you should see
 <div markdown="block" class="alert alert-danger">
 
 Missing index:<br>
-**`"Invalid command format!`<br>
+**`Invalid command format!`<br>
 `bookmark: Bookmarks an applicant, identified by the index number used in the last list, from all future lists of applicants.`<br>
 `Parameter: INDEX (must be a positive integer)`<br>
-`Example: bookmark 1"`**
+`Example: bookmark 1`**
 
 </div>
 
 <div markdown="block" class="alert alert-danger">
 
 Index out of range:<br>
-**`"Error: Invalid index. Please enter an index within range."`**
+**`Error: Invalid index. Please enter an index within range.`**
 
 </div>
 
@@ -916,8 +921,9 @@ watch out for the expected and erroneous messages below that could be displayed 
 
 <div markdown="block" class="alert alert-success">
 
-Successfully commenting on the applicant at the corresponding index.<br>
-**`"Applicant has been successfully commented on."`**
+- Successfully commented on the applicant at the given index.
+- Confirmation message:<br>
+**`Applicant has been successfully commented on.`**
 
 </div>
 
@@ -926,17 +932,17 @@ Successfully commenting on the applicant at the corresponding index.<br>
 <div markdown="block" class="alert alert-danger">
 
 Invalid command format:<br>
-**`“Invalid command format!"`<br>
+**`Invalid command format!"`<br>
 `"comment: Edits the comment of the person identified by the index number used in the last person listing. Existing comment will be overwritten by the input."`<br>
 `"Parameters: INDEX (must be a positive integer) c/ [COMMENT]"`<br>
-`"Example: comment 1 c/ Hardworking student”`**
+`"Example: comment 1 c/ Hardworking student`**
 
 </div>
 
 <div markdown="block" class="alert alert-danger">
 
 Index out of range:<br>
-**`“Error: Invalid index. Please enter an index within range.”`**
+**`Error: Invalid index. Please enter an index within range.`**
 
 </div>
 
@@ -959,7 +965,7 @@ Imports an entire list of applicants along with their details from a CSV file. I
 
 **`import FILENAME`**
 
-**`FILENAME`**: The desired filename of the CSV file to import from (including the file extension)
+**`FILENAME`**: The desired filename of the CSV file to import from (including the file extension).
 
 </div>
 
@@ -984,7 +990,7 @@ A0483910A,Mohammed Taufiq bin Rozaini,85535252,taufiq@u.nus.edu,4.2,A+,
 <div markdown="block" class="alert alert-secondary">
 
 **`import ta-applicants.csv`**
-- Imports a entire list of applicants, from a file in the CSV format called `ta-applicants.csv` in the same directory as the JAR file, into TAfinder
+- Imports a entire list of applicants, from a file in the CSV format called `ta-applicants.csv` in the same directory as the JAR file, into TAfinder.
 
 </div>
 
@@ -992,9 +998,9 @@ A0483910A,Mohammed Taufiq bin Rozaini,85535252,taufiq@u.nus.edu,4.2,A+,
 
 <div markdown="block" class="alert alert-success">
 
-- Successfully attaching a file to the applicant at the corresponding index.
-- Sample confirmation message:<br>
-  **`"Imported 10 applicants successfully!"`**
+- Successfully attached a file to the applicant at the corresponding index.
+- Confirmation message:<br>
+  **`Imported `i` applicants successfully!`**
 
 </div>
 
@@ -1003,7 +1009,7 @@ A0483910A,Mohammed Taufiq bin Rozaini,85535252,taufiq@u.nus.edu,4.2,A+,
 <div markdown="block" class="alert alert-danger">
 
 Missing file permissions or invalid file path:<br>
-**`"Failed to open and load applicant file."`**
+**`Failed to open and load applicant file.`**
 
 </div>
 
@@ -1011,7 +1017,7 @@ Missing file permissions or invalid file path:<br>
 
 #### Attaching file to applicant profiles: `attach`
 
-Attaches local files to the profiles of applicants to provide even more richness and insight into their applications
+Attaches local files to the profiles of applicants to provide even more richness and insight into their applications.
 
 ![attach function UI](images/attach_afterUI.png)
 
@@ -1032,14 +1038,14 @@ Attaches local files to the profiles of applicants to provide even more richness
 <div markdown="block" class="alert alert-secondary">
 
 **`attach 2 f/john-resume.pdf`**
-- Attaches the file called `john-resume.pdf` in the same directory as the `tafinder.jar` file to the second applicant in the applicant list
+- Attaches the file called `john-resume.pdf` in the same directory as the `tafinder.jar` file to the second applicant in the applicant list.
 
 </div>
 
 <div markdown="block" class="alert alert-secondary">
 
 **`attach 78 f//home/jennifer/resumes/benson-resume.pdf`**
-- Attaches the file called `benson-resume.pdf` in the directory `/home/jennifer/resumes` to the 78th applicant in the applicant list
+- Attaches the file called `benson-resume.pdf` in the directory `/home/jennifer/resumes` to the 78th applicant in the applicant list.
 
 </div>
 
@@ -1047,9 +1053,9 @@ Attaches local files to the profiles of applicants to provide even more richness
 
 <div markdown="block" class="alert alert-success">
 
-- Successfully attaching a file to the applicant at the corresponding index.
-- Sample confirmation message:<br>
-  **`"Attached 1 attachments to Alex Yeoh!"`**
+- Successfully attached a file to the applicant at the corresponding index.
+- Confirmation message:<br>
+  **`Attached `i` attachments to `name`!`**
 
 </div>
 
@@ -1058,14 +1064,14 @@ Attaches local files to the profiles of applicants to provide even more richness
 <div markdown="block" class="alert alert-danger">
 
 Invalid file path or corrupted data:<br>
-**`"Failed to copy attachment."`**
+**`Failed to copy attachment.`**
 
 </div>
 
 <div markdown="block" class="alert alert-danger">
 
 Any other unexpected error:<br>
-**`"Error: Unknown error. Please contact the app developer at contact@email.com"`**
+**`Error: Unknown error. Please contact the app developer at contact@email.com`**
 
 </div>
 
@@ -1073,22 +1079,20 @@ Any other unexpected error:<br>
 ## Data Management
 ### Saving the data
 
-TAfinder data are saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
+TAfinder data is saved in the hard disk automatically after any command that changes the data. There is no need to save manually.
 
 ### Editing the data file
 
-TAfinder data are saved automatically as a JSON file `[JAR file location]/data/tafinder.json`. Advanced users are welcome to update data directly by editing that data file.
+TAfinder data is saved automatically as a JSON file `[JAR file location]/data/tafinder.json`. Advanced users are welcome to update data directly by editing that data file.
 
-**Warning:**
 
-<div markdown="block" type="alert alert-warning">
+<div markdown="block" class="alert alert-danger">
+
+**Warning!:**
 
 If your changes to the data file makes its format invalid, TAfinder will discard all data and start with an empty data file at the next run. Hence, it is recommended to take a backup of the file before editing it.
 
 </div>
-
---------------------------------------------------------------------------------------------------------------------
-## Upcoming Features [coming in a future update!]
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -1107,30 +1111,32 @@ If your changes to the data file makes its format invalid, TAfinder will discard
 ## Summary
 ### Prefix Summary
 
-| Parameter      | Prefix | Rules                                                                                                                                                                                                             |
-|----------------|--------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Student number | s/     | - Should be in the format `CdddddddC`, <br/>where `d` represents digit and `C` represents capital letters.                                                                                                        |
-| Name           | n/     | - Should only contain alphanumeric characters and spaces.                                                                                                                                                         |
-| Phone          | p/     | - Should only contain digits<br/>- Should have at least 3 digits.                                                                                                                                                 |
-| Email          | e/     | - Should only be of the form `local@domain` and only accept alphanumeric characters<br/>- `local` allows for special characters `+`, `_`, `.` and `-` as well.<br/>- `domain` must be at least 2 letters long<br/> |
-| GPA            | g/     | - Should be in the range of 0.00 to 5.00 inclusive.<br/>- Can be given in 0, 1 or 2 decimal places.                                                                                                               |
-| Comment        | c/     | - Can be any character.                                                                                                                                                                                           |
-| Tag            | t/     | - Should only contain alphanumeric characters.<br/>- Should not contain spaces.                                                                                                                                   |
+| Parameter       | Prefix | Rules                                                                                                                                                                                                                |
+|-----------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Student Number  | s/     | - Should be in the format `CdddddddC`, <br/>where `d` represents digit and `C` represents capital letters.                                                                                                           |
+| Name            | n/     | - Should only contain alphanumeric characters and spaces.                                                                                                                                                            |
+| Phone           | p/     | - Should only contain digits.<br/>- Should have at least 3 digits.                                                                                                                                                   |
+| Email           | e/     | - Should only be of the form `local@domain` and only accept alphanumeric characters.<br/>- `local` allows for special characters `+`, `_`, `.` and `-` as well.<br/>- `domain` must be at least 2 letters long.<br/> |
+| GPA             | g/     | - Should be in the range of 0.00 to 5.00 inclusive.<br/>- Can be given in 0, 1 or 2 decimal places.                                                                                                                  |
+| Previous Grade  | pg/    | - Should be one of the following: A+, A, A-, B+, B, B-, C+, C, D+, D, F.                                                                                                                                             |
+| Interview Score | is/    | - Should be in the range of 0.00 to 10.00 inclusive.<br/>- Can be given in 0, 1 or 2 decimal places.                                                                                                                 |
+| Comment         | c/     | - No restrictions.                                                                                                                                                                                                   |
+| Tag             | t/     | - Should only contain alphanumeric characters.<br/>- Should not contain spaces.                                                                                                                                      |
 
 
 ### Command Summary
-#### Basic applicant management commands
+#### Basic applicant management
 
 | Action          | Format, Examples                                                                                                                                                                      |
 |-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Add**         | - `add s/STUDENT_NUMBER n/NAME p/PHONE e/EMAIL g/GPA [pg/PREVIOUS_GRADE] [is/INTERVIEW_SCORE] [c/COMMENT] [t/TAG]…` <br> - e.g., `add s/A0269357C n/john doe p/91234567 e/johndoe@example.com g/5.0 pg/A+ t/pastTA t/deanslist` |
+| **Add**         | - `add s/STUDENT_NUMBER n/NAME p/PHONE e/EMAIL g/GPA pg/PREVIOUS_GRADE [is/INTERVIEW_SCORE] [c/COMMENT] [t/TAG]…` <br> - e.g., `add s/A0269357C n/john doe p/91234567 e/johndoe@example.com g/5.0 pg/A+ t/pastTA t/deanslist` |
 | **Edit**        | - `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…​`<br> - e.g.,`edit 2 n/James Lee e/jameslee@example.com`                                                       |
 | **Delete**      | - `delete INDEX`<br> - e.g., `delete 3`                                                                                                                                               |
 | **List**        | - `list [FIELD]`                                                                                                                                                                              |
 | **View**        | - `view INDEX`<br> - e.g., `view 3`                                                                                                                                                   |
 | **Hide/Unhide** | - `hide INDEX` / `unhide INDEX`<br/> - e.g., `hide 3` / `unhide 3`                                                                                                                    |
 
-#### Applicant comparison and evaluation commands
+#### Applicant comparison and evaluation
 
 | Action                  | Format, Examples                                                                  |
 |-------------------------|-----------------------------------------------------------------------------------|

@@ -718,7 +718,7 @@ A0483910A,Mohammed Taufiq bin Rozaini,85535252,taufiq@u.nus.edu,4.2,A+,
     - Upon successfully invoking the `compare` command, a popup window will be displayed. However, if any of the applicants’ details (fields) are too long, the details will not be able to be displayed fully. We plan to enhance the popup window by allowing the details to be displayed fully by implementing scroll panels for each field instead.
 8. **Adjusting Color Schemes of Help and Compare Windows**
     - The current UI color scheme for the help and compare windows, currently grey, differ quite a bit from the main window, where the color scheme is purple-centric. We plan to adjust the color schemes of these 2 pop-up windows to match that of the main window.
-9. **Implementing Export Feature for CSV Files**
-    - Although there is a feature to import CSV files, there is no way to export data as CSV files. We plan to implement this feature to improve the QoL of professors using this application.
+9. **Limiting Interview Score Field to 2 Decimal Places**
+    - The current `Interview Score` field can accept more than 2 decimal places. We plan to limit the field to strictly 2 decimal places, and anything more than that will generate an error message.
 10. **Preventing Integer Overflow When Adding Applicants**
     - If the user were to add more than 2147483647 (max integer for Java), an integer overflow error may result on the input of any command. Our enhancement would be to prevent users from adding more applicants when 2147483647 applicants are already in the list.
