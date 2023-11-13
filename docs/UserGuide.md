@@ -96,7 +96,7 @@ An example of the final command is displayed below:
 </div>
 
 The GUI similar to the below should appear in a few seconds. 
-![Ui](images/startup-UI.png)
+![Ui](images/startupUI.png)
 
 ### Utilisation
 
@@ -128,7 +128,7 @@ Some example commands you can try:
 
 ### Navigating the User Interface
 
-![UI with shaded areas](images/navigation_coloredUI.png)
+![UI with shaded areas](images/navigationUI.png)
 
 The UI has the following areas:
 - Navigation Bar
@@ -915,7 +915,7 @@ watch out for the expected and erroneous messages below that could be displayed 
 <div markdown="block" class="alert alert-success">
 
 Successfully commenting on the applicant at the corresponding index.<br>
-**`"Applicant at index INDEX has been successfully commented on."`**
+**`"Applicant has been successfully commented on."`**
 
 </div>
 
