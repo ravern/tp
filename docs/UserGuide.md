@@ -45,8 +45,7 @@ or above installed. Java is the language that your computer uses to understand T
 
 **Step 3.** Check the version number provided (`xxx`) is at least `11`.
 
-An example is shown below.
-
+An example is shown below:
   ```
   > java -version
   java version "xxx" <Other information>
@@ -58,15 +57,15 @@ An example is shown below.
 
 #### Glossary
 
-| Words/Abbreviations | Explanation                                                                                                                         |
-|---------------------|-------------------------------------------------------------------------------------------------------------------------------------|
-| **TA**              | Teaching Assistant                                                                                                                  |
-| **Applicant**       | Applicant refers to a student who has applied as a TA                                                                               |
-| **Mainstream OS**   | Windows, Linux or Mac                                                                                                               |
-| **CLI**             | Command-Line Interface                                                                                                              |
-| **GUI**             | Graphical User Interface                                                                                                            |
-| **Toast**           | A popup alert to inform users about certain information                                                                             |
-| **Tag**             | Tags are associated with applicants, users can tag applicants with any keyword they want,<br/>the number of tags are not restricted |
+| Words/Abbreviations | Explanation                                                                                                                          |
+|---------------------|--------------------------------------------------------------------------------------------------------------------------------------|
+| **TA**              | Teaching Assistant                                                                                                                   |
+| **Applicant**       | Applicant refers to a student who has applied as a TA                                                                                |
+| **Mainstream OS**   | Windows, Linux or Mac                                                                                                                |
+| **CLI**             | Command-Line Interface                                                                                                               |
+| **GUI**             | Graphical User Interface                                                                                                             |
+| **Toast**           | A popup alert to inform users about certain information.                                                                             |
+| **Tag**             | Tags are associated with applicants, users can tag applicants with any keyword they want,<br/>the number of tags are not restricted. |
 
 ### Installation
 
@@ -88,7 +87,7 @@ An example is shown below.
 
 **Step 4.** Press enter and execute the command.
 
-An example of the final command is displayed below.
+An example of the final command is displayed below:
 
   ```
   > java -jar xxxx/xxxx/tafinder.jar
