@@ -178,7 +178,7 @@ The following sequence diagram shows how the undo operation works:
 
 The following activity diagram summarizes what happens when a user executes a new command:
 
-<img src="images/HideActivityDiagram.png" width="250" /
+<img src="images/HideActivityDiagram.png" width="250" />
 
 ### Bookmark/Unbookmark feature
 
@@ -605,78 +605,120 @@ We've broken these out into separate guides, do check them out.
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Appendix: Instructions for manual testing**
-
-Given below are instructions to test the app manually.
-
-<div markdown="span" class="alert alert-info">:information_source: **Note:** These instructions only provide a starting point for testers to work on;
-testers are expected to do more *exploratory* testing.
-
-</div>
+## Appendix: Instructions for Manual Testing
 
 ### Launch and shutdown
 
 1. Initial launch
+    1. Download the jar file and copy into an empty folder
+    2. Open a command-line and navigate to the directory the jar file is in
+    3. Run the command `java -jar tafinder.jar`. Expected: Shows the GUI with a set of sample TA applicants. The window size may not be optimum.
+2. Shutdown
+    1. Click “File”
+    2. Click “Exit”. Expected: The app closes.
 
-   1. Download the jar file and copy into an empty folder
+### Hide and unhide
 
-   1. Double-click the jar file Expected: Shows the GUI with a set of sample contacts. The window size may not be optimum.
+1. Hide the first applicant
+    1. Run `hide 1`. Expected: The first applicant disappears.
+    2. Run `list hidden`. Expected: Only the first applicant is shown.
+2. Unhide the hidden applicant
+    1. Run the commands above beforehand to have a hidden applicant
+    2. Run `list hidden`
+    3. Run `unhide 1`. Expected: All the applicants are shown including the unhidden first applicant.
+3. Unhide all applicants
+    1. Ensure there are at least 2 applicants in the current view.
+    2. Run `list`
+    3. Run `hide 1` then `hide 1` again. Expected: The first 2 applicants disappear.
+    4. Run `unhide-all`. Expected: The first 2 applicants appear in the list again.
 
-1. Saving window preferences
+### Bookmark and unbookmark
 
-   1. Resize the window to an optimum size. Move the window to a different location. Close the window.
+1. Bookmark the first applicant
+    1. Run `bookmark 1`. Expected: The bookmark icon next to the first applicant becomes filled.
+    2. Run `list bookmarked`. Expected: All the applicants that are bookmarked are shown.
+2. Unbookmark the first applicant
+    1. Run the commands above beforehand to have a bookmarked applicant
+    2. Run `list bookmarked`
+    3. Run `unbookmark 1`. Expected: The unbookmarked applicant disappears from the list, so only the remaining bookmarked applicants are shown.
 
-   1. Re-launch the app by double-clicking the jar file.<br>
-       Expected: The most recent window size and location is retained.
+### Sort
 
-1. _{ more test cases …​ }_
+1. Run `list`.
+2. Run `sort gpa`. Expected: The applicants should be sorted by GPA in descending order. 
 
-### Deleting a person
+### View
 
-1. Deleting a person while all persons are being shown
+1. Run `view 1`. Expected: All the details of the applicant with the index 1 are shown in the detail view.
 
-   1. Prerequisites: List all persons using the `list` command. Multiple persons in the list.
+### Compare
 
-   1. Test case: `delete 1`<br>
-      Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.
+1. Ensure that there are at least 2 applicants in the current view
+2. Run `compare 1 2`. Expected: A new window is created with details from both applicants.
 
-   1. Test case: `delete 0`<br>
-      Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.
+### Import
 
-   1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
-      Expected: Similar to previous.
+1. Copy and paste the file below into a file called `sample.csv` in the **same directory** as the jar file 
+2. Run `import sample.csv`. Expected: 4 applicants are successfully imported into TAfinder.
 
-1. _{ more test cases …​ }_
+```
+studentNo,name,phone,email,gpa,previousGrade,tags
+A0123486A,Jasmine David,98472983,jasmine_david@u.nus.edu,4.3,B+,deansList;pastTA
+A0456123A,Sandeep Kopparthi,86753746,sandeep@u.nus.edu,5.0,B+,pastTA
+A0775848D,Lim Boon Kong,97777777,boonkong@u.nus.edu,3.5,C,deansList
+A0483910A,Mohammed Taufiq bin Rozaini,85535252,taufiq@u.nus.edu,4.2,A+,
+```
 
-### Saving data
+### Attach
 
-1. Dealing with missing/corrupted data files
-
-   1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
-
-1. _{ more test cases …​ }_
+1. Download or create a sample PDF file (you can use the exported user guide as a sample) and place it in the **same directory** as the jar file
+2. Ensure there is at least one applicant in the list
+3. Run `attach 1 f/name-of-file.pdf`. Expected: The file is attached to the first applicant by indication of filename in applicant details. The details can be viewed by running the command `view 1`.
 
 --------------------------------------------------------------------------------------------------------------------
 
-## **Appendix: Planned Enhancements**
+## Appendix: Effort
 
-1. ****Limiting GPA Field to 2 Decimal Places****
+### Difficulty Level
+
+- Numerous challenges were encountered during the project's execution.
+- One of the challenges we faced was working together as a team and coordinating efforts to minimize merge conflicts. We held regular team meetings to discuss progress and identify conflicts. We used version control tools like Git to track changes and resolve conflicts early. We divided tasks among team members and established coding conventions for consistency. When conflicts occurred, we had a designated merge manager to resolve them. By prioritizing communication, planning, and conflict resolution, we minimized the impact of merge conflicts on our project.
+- Another major challenge we faced was managing and meeting tough deadlines as the project became more complex. To address this, we prioritized tasks based on importance and urgency, adjusted our timeline as needed, communicated openly within the team, and optimized productivity by leveraging our strengths. With this proactive and strategic approach, we successfully met the deadlines and delivered high-quality results.
+- Overall, we found this project to be challenging but rewarding. It provided us with opportunities to enhance our technical skills, collaborate effectively as a team, and overcome various obstacles. Despite the difficulties, we are proud of the accomplishments and growth we achieved throughout the project.
+
+### Effort Required
+
+- Reused `model` classes that were already implemented (e.g. `AddressBookParser`, `Person`)
+- Reused `ui` classes and FXML files for certain parts of the overall GUI (eg. input box, message box)
+- Reused `Storage` classes that saves and loads data from files
+
+### Achievements
+
+- For most of us, this was our first experience contributing pull requests (PRs) to a project that was already established and had some existing code (known as a brownfield project).
+- This opportunity allowed us to expand our skills and knowledge beyond just working on Orbital, and gave us valuable experience in working with a larger and more complex codebase.
+- By contributing to a brownfield project, we were able to gain insights into the challenges of maintaining and improving existing code, and learn from the expertise of other developers who had worked on the project before us.
+
+--------------------------------------------------------------------------------------------------------------------
+
+## Appendix: Planned Enhancements
+
+1. **Limiting GPA Field to 2 Decimal Places**
     - The current `GPA` field can accept more than 2 decimal places. We plan to limit the field to strictly 2 decimal places, and anything more than that will generate an error message.
-2. ****Limiting Phone Number Field to At Most 8 Numbers****
+2. **Limiting Phone Number Field to At Most 8 Numbers**
     - The current `phone number` field accepts unlimited numbers. We plan to limit the field to at most 8 numbers (length of phone number in Singapore), as our target audience is NUS professors and Teaching Assistants (TAs).
-3. ****Requiring Alphabetical Characters in the Name Field****
+3. **Requiring Alphabetical Characters in the Name Field**
     - The current `name` field accepts a string of only numbers as a name, which should not be the case. We plan to limit the field to require alphabetical characters, and anything else would result in an error message.
-4. ****Improving Display of Added Applicant Message****
+4. **Improving Display of Added Applicant Message**
     - When a person is successfully added using the `add` command but there is no `comment` field for the person, the current main UI window will display a message `New applicant added: erferferferf Doe; Phone: 98765432; Email: [johnd@example.com](mailto:johnd@example.com); GPA: 4.9; Comment: Optional.empty; Tags: [pastTA]`, with a default `Optional.empty` string for the Comment field. We plan to enhance the message by removing the display of the `Comment` field, when none is added.
-5. ****Improving Error Messages for Commands Requiring an Index****
+5. **Improving Error Messages for Commands Requiring an Index**
     - Currently, our application only accepts positive numbers (1, 2, 3…) as acceptable inputs that conform to the command format for commands that require indexes (it then validates these numbers to check the range etc.). Therefore, non-positive numbers (0, -1…) are considered as invalid formatting of the errors. Thus, the current error message is ‘`Invalid command format!'`. We plan to change the error message to better reflect the issue with non-positive numbers rather than have a generic invalid command format message.
-6. ****Making Applicants in List Clickable****
+6. **Making Applicants in List Clickable**
     - Although there is visual feedback on clicking each of the applicants, the details shown on the right side of the application does not change. We plan to allow the clicking of applicants in addition to the command `view INDEX` to show the details of each applicant.
-7. ****Enhancing Compare Command Popup Window****
+7. **Enhancing Compare Command Popup Window**
     - Upon successfully invoking the `compare` command, a popup window will be displayed. However, if any of the applicants’ details (fields) are too long, the details will not be able to be displayed fully. We plan to enhance the popup window by allowing the details to be displayed fully by implementing scroll panels for each field instead.
-8. ****Adjusting Color Schemes of Help and Compare Windows****
+8. **Adjusting Color Schemes of Help and Compare Windows**
     - The current UI color scheme for the help and compare windows, currently grey, differ quite a bit from the main window, where the color scheme is purple-centric. We plan to adjust the color schemes of these 2 pop-up windows to match that of the main window.
-9. ****Implementing Export Feature for CSV Files****
+9. **Implementing Export Feature for CSV Files**
     - Although there is a feature to import CSV files, there is no way to export data as CSV files. We plan to implement this feature to improve the QoL of professors using this application.
-10. ****Preventing Integer Overflow When Adding Applicants****
+10. **Preventing Integer Overflow When Adding Applicants**
     - If the user were to add more than 2147483647 (max integer for Java), an integer overflow error may result on the input of any command. Our enhancement would be to prevent users from adding more applicants when 2147483647 applicants are already in the list.

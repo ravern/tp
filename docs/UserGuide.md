@@ -945,7 +945,7 @@ Index out of range:<br>
 
 #### Importing applicants from spreadsheet: `import`
 
-Imports an entire list of applicants along with their details from a CSV file.
+Imports an entire list of applicants along with their details from a CSV file. If applicants with the same student number already exist, they will be skipped.
 
 |            Sample .csv             |                After import                |
 |:----------------------------------:|:------------------------------------------:|
