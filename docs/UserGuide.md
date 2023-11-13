@@ -127,7 +127,8 @@ Some example commands you can try:
 </div>
 
 ### Navigating the User Interface
-![UI with shaded areas](images/navigationUI.png)
+
+![UI with shaded areas](images/navigation_coloredUI.png)
 
 The UI has the following areas:
 - Navigation Bar
@@ -738,7 +739,11 @@ Empty list:<br>
 
 Compares two applicants side by side to make informed decisions.
 
-![compare function UI](images/compareUI.png)
+
+|          TAfinder window           |                  Popup window                  |
+|:----------------------------------:|:----------------------------------------------:|
+| ![compareUI](images/compareUI.png) | ![compare_popupUI](images/compare_popupUI.png) |
+
 
 **Format:**
 
