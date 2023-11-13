@@ -655,3 +655,28 @@ testers are expected to do more *exploratory* testing.
    1. _{explain how to simulate a missing/corrupted file, and the expected behavior}_
 
 1. _{ more test cases …​ }_
+
+--------------------------------------------------------------------------------------------------------------------
+
+## **Appendix: Planned Enhancements**
+
+1. ****Limiting GPA Field to 2 Decimal Places****
+    - The current `GPA` field can accept more than 2 decimal places. We plan to limit the field to strictly 2 decimal places, and anything more than that will generate an error message.
+2. ****Limiting Phone Number Field to At Most 8 Numbers****
+    - The current `phone number` field accepts unlimited numbers. We plan to limit the field to at most 8 numbers (length of phone number in Singapore), as our target audience is NUS professors and Teaching Assistants (TAs).
+3. ****Requiring Alphabetical Characters in the Name Field****
+    - The current `name` field accepts a string of only numbers as a name, which should not be the case. We plan to limit the field to require alphabetical characters, and anything else would result in an error message.
+4. ****Improving Display of Added Applicant Message****
+    - When a person is successfully added using the `add` command but there is no `comment` field for the person, the current main UI window will display a message `New applicant added: erferferferf Doe; Phone: 98765432; Email: [johnd@example.com](mailto:johnd@example.com); GPA: 4.9; Comment: Optional.empty; Tags: [pastTA]`, with a default `Optional.empty` string for the Comment field. We plan to enhance the message by removing the display of the `Comment` field, when none is added.
+5. ****Improving Error Messages for Commands Requiring an Index****
+    - Currently, our application only accepts positive numbers (1, 2, 3…) as acceptable inputs that conform to the command format for commands that require indexes (it then validates these numbers to check the range etc.). Therefore, non-positive numbers (0, -1…) are considered as invalid formatting of the errors. Thus, the current error message is ‘`Invalid command format!'`. We plan to change the error message to better reflect the issue with non-positive numbers rather than have a generic invalid command format message.
+6. ****Making Applicants in List Clickable****
+    - Although there is visual feedback on clicking each of the applicants, the details shown on the right side of the application does not change. We plan to allow the clicking of applicants in addition to the command `view INDEX` to show the details of each applicant.
+7. ****Enhancing Compare Command Popup Window****
+    - Upon successfully invoking the `compare` command, a popup window will be displayed. However, if any of the applicants’ details (fields) are too long, the details will not be able to be displayed fully. We plan to enhance the popup window by allowing the details to be displayed fully by implementing scroll panels for each field instead.
+8. ****Adjusting Color Schemes of Help and Compare Windows****
+    - The current UI color scheme for the help and compare windows, currently grey, differ quite a bit from the main window, where the color scheme is purple-centric. We plan to adjust the color schemes of these 2 pop-up windows to match that of the main window.
+9. ****Implementing Export Feature for CSV Files****
+    - Although there is a feature to import CSV files, there is no way to export data as CSV files. We plan to implement this feature to improve the QoL of professors using this application.
+10. ****Preventing Integer Overflow When Adding Applicants****
+    - If the user were to add more than 2147483647 (max integer for Java), an integer overflow error may result on the input of any command. Our enhancement would be to prevent users from adding more applicants when 2147483647 applicants are already in the list.
