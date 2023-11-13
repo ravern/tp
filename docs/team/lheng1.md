@@ -23,7 +23,7 @@ TAfinder is a desktop resource management application used by NUS SOC professors
 * **Contributions to the UG**:
   * Created the skeletal version of the UG for the team: [PR #52](https://github.com/AY2324S1-CS2103T-W10-1/tp/pull/52)
   * In charge of updating the `edit` and `compare` function of UG: [PR #52](https://github.com/AY2324S1-CS2103T-W10-1/tp/pull/52), [PR #85](https://github.com/AY2324S1-CS2103T-W10-1/tp/pull/85)
-  * Helped check overall quality of UG.
+  * Helped check overall quality of UG: [PR #211](https://github.com/AY2324S1-CS2103T-W10-1/tp/pull/211)
 
 
 * **Contributions to the DG**:
