@@ -21,6 +21,7 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.commons.util.ToStringBuilder;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
@@ -92,95 +93,19 @@ public class ImportCommand extends Command {
                 throw new CommandException(MESSAGE_INVALID_FILE_FORMAT);
             }
             String header = scanner.nextLine();
-            String[] fields = header.split(CELL_DELIM);
-
-            Set<String> fieldSet = Set.of(fields);
-            if (!fieldSet.containsAll(REQUIRED_FIELDS)) {
-                Set<String> requiredFieldsCopy = new HashSet<>(REQUIRED_FIELDS);
-                requiredFieldsCopy.removeAll(fieldSet);
-                throw new CommandException(
-                        String.format(MESSAGE_MISSING_FIELDS, String.join(", ", requiredFieldsCopy)));
-            }
-
-            Map<String, Integer> fieldIndices = new HashMap<>(fields.length);
-            for (int i = 0; i < fields.length; i++) {
-                fieldIndices.put(fields[i], i);
-            }
+            Map<String, Integer> fieldIndices = buildFieldIndices(header);
 
             int lineNo = 1;
             while (scanner.hasNextLine()) {
-                String line = scanner.nextLine();
-                String[] data = line.split(CELL_DELIM, -1);
-
                 lineNo++;
-
-                String studentNoString = data[fieldIndices.get(FIELD_STUDENT_NUMBER)];
-                if (!StudentNumber.isValidStudentNumber(studentNoString)) {
-                    failureLineNos.add(lineNo);
-                    continue;
-                }
-                StudentNumber studentNo = new StudentNumber(studentNoString);
-
-                String nameString = data[fieldIndices.get(FIELD_NAME)];
-                if (!Name.isValidName(nameString)) {
-                    failureLineNos.add(lineNo);
-                    continue;
-                }
-                Name name = new Name(nameString);
-
-                String phoneString = data[fieldIndices.get(FIELD_PHONE)];
-                if (!Phone.isValidPhone(phoneString)) {
-                    failureLineNos.add(lineNo);
-                    continue;
-                }
-                Phone phone = new Phone(phoneString);
-
-                String emailString = data[fieldIndices.get(FIELD_EMAIL)];
-                if (!Email.isValidEmail(emailString)) {
-                    failureLineNos.add(lineNo);
-                    continue;
-                }
-                Email email = new Email(emailString);
-
-                String gpaString = data[fieldIndices.get(FIELD_GPA)];
-                double gpaDouble;
+                String line = scanner.nextLine();
                 try {
-                    gpaDouble = Double.parseDouble(gpaString);
-                } catch (NumberFormatException e) {
+                    Person applicant = parseLine(fieldIndices, line);
+                    applicants.add(applicant);
+                } catch (ParsePersonException e) {
                     failureLineNos.add(lineNo);
                     continue;
                 }
-                if (!Gpa.isValidGpa(gpaDouble)) {
-                    failureLineNos.add(lineNo);
-                    continue;
-                }
-                Gpa gpa = new Gpa(gpaDouble);
-
-                String previousGradeString = data[fieldIndices.get(FIELD_PREVIOUS_GRADE)];
-                if (!PreviousGrade.isValidGrade(previousGradeString)) {
-                    failureLineNos.add(lineNo);
-                    continue;
-                }
-                PreviousGrade previousGrade = new PreviousGrade(previousGradeString);
-
-
-                String tagsString = data[fieldIndices.get(FIELD_TAGS)];
-                String[] tagStrings = tagsString.split(DATA_ARRAY_DELIM);
-                Set<Tag> tags = Set.of();
-                if (tagStrings.length > 1 || tagStrings.length == 0 || !tagStrings[0].trim().equals("")) {
-                    boolean isValid = List.of(tagStrings).stream().map(Tag::isValidTagName).allMatch(v -> v);
-                    if (!isValid) {
-                        failureLineNos.add(lineNo);
-                        continue;
-                    }
-                    tags = List.of(tagStrings).stream().map(Tag::new).collect(Collectors.toSet());
-                }
-
-                Person applicant = new Person(
-                        studentNo, name, phone, email, gpa, previousGrade,
-                        Optional.empty(), Optional.empty(), tags, List.of(),
-                        new IsHidden(false), new IsBookmarked(false));
-                applicants.add(applicant);
             }
         } catch (FileNotFoundException e) {
             throw new CommandException(MESSAGE_FAILED_TO_OPEN, e);
@@ -227,6 +152,89 @@ public class ImportCommand extends Command {
         return new CommandResult(message);
     }
 
+    private Map<String, Integer> buildFieldIndices(String header) throws CommandException {
+        String[] fields = header.split(CELL_DELIM);
+
+        Set<String> fieldSet = Set.of(fields);
+        if (!fieldSet.containsAll(REQUIRED_FIELDS)) {
+            Set<String> requiredFieldsCopy = new HashSet<>(REQUIRED_FIELDS);
+            requiredFieldsCopy.removeAll(fieldSet);
+            throw new CommandException(
+                    String.format(MESSAGE_MISSING_FIELDS, String.join(", ", requiredFieldsCopy)));
+        }
+
+        Map<String, Integer> fieldIndices = new HashMap<>(fields.length);
+        for (int i = 0; i < fields.length; i++) {
+            fieldIndices.put(fields[i], i);
+        }
+
+        return fieldIndices;
+    }
+
+    private Person parseLine(Map<String, Integer> fieldIndices, String line) throws ParsePersonException {
+        String[] data = line.split(CELL_DELIM, -1);
+
+        String studentNoString = data[fieldIndices.get(FIELD_STUDENT_NUMBER)];
+        if (!StudentNumber.isValidStudentNumber(studentNoString)) {
+            throw new ParsePersonException("Invalid student number");
+        }
+        StudentNumber studentNo = new StudentNumber(studentNoString);
+
+        String nameString = data[fieldIndices.get(FIELD_NAME)];
+        if (!Name.isValidName(nameString)) {
+            throw new ParsePersonException("Invalid name");
+        }
+        Name name = new Name(nameString);
+
+        String phoneString = data[fieldIndices.get(FIELD_PHONE)];
+        if (!Phone.isValidPhone(phoneString)) {
+            throw new ParsePersonException("Invalid phone");
+        }
+        Phone phone = new Phone(phoneString);
+
+        String emailString = data[fieldIndices.get(FIELD_EMAIL)];
+        if (!Email.isValidEmail(emailString)) {
+            throw new ParsePersonException("Invalid email");
+        }
+        Email email = new Email(emailString);
+
+        String gpaString = data[fieldIndices.get(FIELD_GPA)];
+        double gpaDouble;
+        try {
+            gpaDouble = Double.parseDouble(gpaString);
+        } catch (NumberFormatException e) {
+            throw new ParsePersonException("Invalid GPA");
+        }
+        if (!Gpa.isValidGpa(gpaDouble)) {
+            throw new ParsePersonException("Invalid GPA");
+        }
+        Gpa gpa = new Gpa(gpaDouble);
+
+        String previousGradeString = data[fieldIndices.get(FIELD_PREVIOUS_GRADE)];
+        if (!PreviousGrade.isValidGrade(previousGradeString)) {
+            throw new ParsePersonException("Invalid previous grade");
+        }
+        PreviousGrade previousGrade = new PreviousGrade(previousGradeString);
+
+        String tagsString = data[fieldIndices.get(FIELD_TAGS)];
+        String[] tagStrings = tagsString.split(DATA_ARRAY_DELIM);
+        Set<Tag> tags = Set.of();
+        if (tagStrings.length > 1 || tagStrings.length == 0 || !tagStrings[0].trim().equals("")) {
+            boolean isValid = List.of(tagStrings).stream().map(Tag::isValidTagName).allMatch(v -> v);
+            if (!isValid) {
+                throw new ParsePersonException("Invalid tag");
+            }
+            tags = List.of(tagStrings).stream().map(Tag::new).collect(Collectors.toSet());
+        }
+
+        Person applicant = new Person(
+                studentNo, name, phone, email, gpa, previousGrade,
+                Optional.empty(), Optional.empty(), tags, List.of(),
+                new IsHidden(false), new IsBookmarked(false));
+
+        return applicant;
+    }
+
     @Override
     public boolean equals(Object other) {
         if (other == this) {
@@ -248,4 +256,16 @@ public class ImportCommand extends Command {
                 .add("attachment", attachment)
                 .toString();
     }
+
+    private static class ParsePersonException extends IllegalValueException {
+
+        public ParsePersonException(String message) {
+            super(message);
+        }
+
+        public ParsePersonException(String message, Throwable cause) {
+            super(message, cause);
+        }
+    }
+
 }
